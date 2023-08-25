@@ -53,7 +53,7 @@ Expected Output:
 ##### **Describe:** Pizza.prototype.fetchPrice()
 
 ```javascript
-Test 1: "It will return the price of the pizza Object"
+Test 1: "It will return the price of a pizza Object"
 Code:
   let pizza2 = new Pizza("ham onion olive" , "small");
   Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
@@ -64,12 +64,22 @@ Expected Output: 10;
 ##### **Describe:** Pizza.prototype.fetchSize()
 
 ```javascript
-Test 1: "It will return the size of the pizza Object"
+Test 1: "It will return the size of a pizza Object"
 Code:
   let pizza2 = new Pizza("ham onion olive" , "small");
   Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
   pizza2.fetchSize();
 Expected Output: "small";
+```
+##### **Describe:** Pizza.prototype.fetchToppings()
+
+```javascript
+Test 1: "It will return the toppings of ta pizza Object"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "small");
+  Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
+  pizza2.fetchToppings();
+Expected Output: ["ham", "onion", "olive"]
 ```
 
 ## Known Bugs

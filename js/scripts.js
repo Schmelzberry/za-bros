@@ -14,7 +14,9 @@ Pizza.prototype.fetchPrice = function () {
 // prototype for checking the size of a pizza
 Pizza.prototype.fetchSize = function () {
   return this.size;
-} 
+}
+
+
 
 
 
