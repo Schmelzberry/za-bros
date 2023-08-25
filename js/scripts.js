@@ -1,4 +1,4 @@
 function Pizza(toppings, size) {
-  this.toppings = toppings;
+  this.toppings = toppings.split(" ");
   this.size = size;
 }
