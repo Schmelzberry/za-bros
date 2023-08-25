@@ -59,8 +59,17 @@ Code:
   Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
   pizza2.fetchPrice();
 Expected Output: 10;
+```
 
+##### **Describe:** Pizza.prototype.fetchSize()
 
+```javascript
+Test 1: "It will return the size of the pizza Object"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "small");
+  Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
+  pizza2.fetchSize();
+Expected Output: "small";
 ```
 
 ## Known Bugs
