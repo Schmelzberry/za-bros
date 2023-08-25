@@ -23,10 +23,7 @@ Pizza.prototype.fetchToppings = function () {
   return this.toppings;
 }
 
-// prototype for checking the toppings of a pizza
-Pizza.prototype.toppingsCalc = function () {
-  return this.price + 1;
-}
+
 
 
 

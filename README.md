@@ -91,6 +91,13 @@ Code:
   Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
   pizza2.toppingsCalc();
 Expected Output: price: 11;
+
+Test 2: "It will add 1 to the price of the pizza if ham or pepperoni are a topping"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "small");
+  Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
+  pizza2.toppingsCalc();
+Expected Output: price: 11;
 ```
 
 
