@@ -1,4 +1,4 @@
-// ******Business Logic****** // 
+// BUSINESS LOGIC // 
 
 function Pizza(toppings, size) {
   this.toppings = toppings.split(" ");
@@ -8,17 +8,17 @@ function Pizza(toppings, size) {
 // global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
 let pizza2 = new Pizza("ham onion olive pepperoni", "medium");
 
-// prototype for checking the price of a pizza
+// checking the price of a pizza
 Pizza.prototype.fetchPrice = function () {
   return this.price;
 }
 
-// prototype for checking the size of a pizza
+// checking the size of a pizza
 Pizza.prototype.fetchSize = function () {
   return this.size;
 }
 
-// prototype for checking the toppings of a pizza
+// checking the toppings of a pizza
 Pizza.prototype.fetchToppings = function () {
   return this.toppings;
 }
@@ -27,8 +27,8 @@ Pizza.prototype.fetchToppings = function () {
 // prototype for checking the toppings of a pizza
 Pizza.prototype.toppingsCalc = function () {
   let meatToppings = this.toppings;
-
-  // set this variable so the forEach loop understands the Pizza's price is the target and can pass result outside of loop to toppingsCalc prototype  
+  
+  // set this variable so the forEach loop can communicate with Pizza's price and can pass result outside of loop to toppingsCalc prototype  
   let giveLoopContext = this;
 
   meatToppings.forEach(function (topping) {
@@ -71,6 +71,5 @@ this.price = 0;
 this.toppingsCalc();
 this.sizeCalc();
 return this.price;
-
 }
 

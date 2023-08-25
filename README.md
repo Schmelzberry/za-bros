@@ -92,14 +92,14 @@ Code:
   pizza2.toppingsCalc();
 Expected Output: price: 11;
 
-Test 2: "It will add 1 to the price of the pizza if ham or pepperoni are a topping"
+Test 2: "It will add 1 to the price of the pizza if meat is selected as a topping"
 Code:
   let pizza2 = new Pizza("ham onion olive" , "small");
   Pizza { toppings: ["ham", "onion", "olive", "pepperoni"] size: "small", price: 10}
   pizza2.toppingsCalc();
 Expected Output: price: 12;
 
-Test 3: "It will add 0.5 to the price of the pizza if onion or olive are a topping"
+Test 3: "It will add 0.5 to the price of the pizza if a non-meat item is a topping"
 Code:
   let pizza2 = new Pizza("ham onion olive pepperoni" , "small");
   Pizza { toppings: ["ham", "onion", "olive", "pepperoni"] size: "small", price: 10}
