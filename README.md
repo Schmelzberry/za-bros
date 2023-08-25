@@ -120,7 +120,9 @@ Test 2: "It will add 4 to the price of the pizza if the size is large"
 Code:
   let pizza2 = new Pizza("" , "large");
   pizza2.sizeCalc();
-Expected Output: Pizza { toppings: [""] size: "medium", price: 14}
+Expected Output: Pizza { toppings: [""] size: "large", price: 14}
+
+
 
 ```
 
