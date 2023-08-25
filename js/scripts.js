@@ -40,11 +40,10 @@ Pizza.prototype.toppingsCalc = function () {
       giveLoopContext.price += 0.5;
       console.log(giveLoopContext.price);
     }
-
-
   })
   return this.price;
 }
+
 
 
 
