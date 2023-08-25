@@ -6,7 +6,7 @@ function Pizza(toppings, size) {
   this.price = 10;
 }
 // global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
-let pizza2 = new Pizza("ham onion olive pepperoni" , "small");
+let pizza2 = new Pizza("ham onion olive pepperoni", "small");
 
 // prototype for checking the price of a pizza
 Pizza.prototype.fetchPrice = function () {
@@ -23,23 +23,27 @@ Pizza.prototype.fetchToppings = function () {
   return this.toppings;
 }
 
+
 // prototype for checking the toppings of a pizza
 Pizza.prototype.toppingsCalc = function () {
   let meatToppings = this.toppings;
 
-  // set this variable so the forEach loop understands the Pizza's price is the target and can pass result outside of loop to upper prototype  
+  // set this variable so the forEach loop understands the Pizza's price is the target and can pass result outside of loop to toppingsCalc prototype  
   let giveLoopContext = this;
 
-  meatToppings.forEach(function(topping) {
-    
+  meatToppings.forEach(function (topping) {
     if (topping.toString() === 'ham' || topping.toString() === 'pepperoni') {
       giveLoopContext.price += 1;
-        console.log(giveLoopContext.price);
+      console.log(giveLoopContext.price);
+    } 
+    else if (topping.toString() === 'onion' || topping.toString() === 'olive') {
+      giveLoopContext.price += 0.5;
+      console.log(giveLoopContext.price);
     }
-        
+
 
   })
-    return this.price;
+  return this.price;
 }
 
 
