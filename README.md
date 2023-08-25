@@ -32,11 +32,11 @@ git clone https://github.com/Schmelzberry/za-bros.git
 ##### **Describe:** Pizza()
 
 ```javascript
-Test 1: "It will create a pizza object with a 2 key value pairs: size and toppings."
+Test 1: "It will create a pizza object with a 2 key value pairs: size and an array of toppings."
 Code:
-  let pizza1 = new Pizza(size,[toppings])
+  let pizza1 = new Pizza("small",["ham"])
 Expected Output:
-  Pizza {size: undefined, toppings: [undefined]}
+  Pizza {size: "small", toppings: ["ham"]}
 ```
 
 ## Known Bugs
