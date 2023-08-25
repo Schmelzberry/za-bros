@@ -44,7 +44,7 @@ Code:
 Expected Output:
   Pizza { toppings: ["ham", "onion", "olive"] size: "small",}
 
-  Test 3: "It will create an additional key-value for price."
+  Test 3: "It will create an additional key-value for price and set it to a base price of 10 for small pizzas."
 Code:
   let pizza2 = new Pizza("ham onion olive" , "small");
 Expected Output:
@@ -105,6 +105,17 @@ Code:
   Pizza { toppings: ["ham", "onion", "olive", "pepperoni"] size: "small", price: 10}
   pizza2.toppingsCalc();
 Expected Output: price: 13;
+```
+
+##### **Describe:** Pizza.prototype.sizeCalc()
+
+```javascript
+Test 1: "It will add 2 to the price of the pizza if the size is medium"
+Code:
+  let pizza2 = new Pizza("" , "medium");
+  pizza2.sizeCalc();
+Expected Output: Pizza { toppings: [""] size: "medium", price: 12}
+
 ```
 
 
