@@ -16,33 +16,47 @@
 </head>
 <body>
 
-  <div class="container-fluid">
+  <div id="form1" class="container-fluid">
 
     <h1>'Za Bros Pizza</h1>
-    <h4>Select your toppings:</h4>
+    <h4>Select toppings:</h4>
 
     <form id="select-tops" class="container">
       <input type="checkbox" id="ham" name="tops" value="ham">
-      <label for="toppings">Ham</label><br>
+      <label for="ham">Ham</label><br>
       <input type="checkbox" id="pepperoni" name="tops" value="pepperoni">
-      <label for="toppings">Pepperoni</label><br>
+      <label for="pepperoni">Pepperoni</label><br>
+      <input type="checkbox" id="sausage" name="tops" value="sausage">
+      <label for="sausage">Sausage</label><br>
       <input type="checkbox" id="onion" name="tops" value="onion">
-      <label for="toppings">Onion</label><br>
-      <input type="checkbox" id="onlive" name="tops" value="olive">
-      <label for="toppings">Olive</label><br>
+      <label for="onion">Onions</label><br>
+      <input type="checkbox" id="olive" name="tops" value="olive">
+      <label for="olive">Olives</label><br>
+      <input type="checkbox" id="mushroom" name="tops" value="mushroom">
+      <label for="mushroom">Mushrooms</label><br>
+      <button id="tops-submit" type="submit">Enter</button>
     </form>
 
-    <form id="select-tops" class="container">
-      <h4>Select your size:</h4>
+  </div>
+
+  <div id="form2" class="container-fluid">
+    <h4>Select your size:</h4>
+
+    <form id="select-size" class="container">
+      
       <input type="radio" id="sml" name="size-pizza" value="small">
-      <label for="toppings">Small</label><br>
+      <label for="sml">Small</label><br>
       <input type="radio" id="med" name="size-pizza" value="medium">
-      <label for="toppings">Medium</label><br>
+      <label for="med">Medium</label><br>
       <input type="radio" id="lrg" name="size-pizza" value="large">
-      <label for="toppings">Large</label><br>
-
+      <label for="lrg">Large</label><br>
+      <button id="size-submit" type="submit">Enter</button>
     </form>
 
+  </div>
+
+  <div id="results" class="hidden">
+    <p>Thanks for ordering! Based on your toppings of :<span id="toppings-results"></span> and size of <span id="size-results"></span> , your final price will be <span id="final-price-results"></span></p>
   </div>
 
 </body>

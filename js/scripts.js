@@ -32,7 +32,7 @@ Pizza.prototype.toppingsCalc = function () {
   let giveLoopContext = this;
 
   meatToppings.forEach(function (topping) {
-    if (topping.toString() === 'ham' || topping.toString() === 'pepperoni') {
+    if (topping.toString() === 'ham' || topping.toString() === 'pepperoni' || topping.toString() === 'sausage') {
       giveLoopContext.price += 1;
       console.log(giveLoopContext.price);
     } 
@@ -73,3 +73,44 @@ this.sizeCalc();
 return this.price;
 }
 
+// USER INTERFACE LOGIC // 
+
+function handlePizza () {
+  const customerPizza = new Pizza("toppings", "size");
+
+  const toppingsButton = document.querySelector("tops-submit");
+  console.log(toppingsButton)
+  const sizeButton = document.getElementById("size-submit");
+
+  // toppings button event handler
+  toppingsButton.addEventListener("click", function() {
+    displayPizza(customerPizza);
+
+  })
+
+  sizeButton.addEventListener("click", function() {
+    displayPizza(customerPizza);
+
+  })
+}
+
+function displayPizza(customerPizza) {
+
+  const customerToppings = document.getElementById("toppings-results");
+  const customerSize = document.getElementById("size-results");
+  const customerFinalPrice = document.getElementById("final-price-results");
+
+  customerToppings.innerText = null;
+  customerSize.innerText = null;
+  customerFinalPrice.innerText = null;
+
+  customerToppings.append(customerPizza.fetchToppings());
+  customerSize.append(customerPizza.fetchSize());
+  customerFinalPrice.append(customerPizza.finalPrice());
+
+  document.querySelector("div#results").removeAttribute("class");
+
+
+}
+
+window.addEventListener("load", handlePizza);
