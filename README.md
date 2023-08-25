@@ -82,6 +82,18 @@ Code:
 Expected Output: ["ham", "onion", "olive"]
 ```
 
+##### **Describe:** Pizza.prototype.toppingsCalc()
+
+```javascript
+Test 1: "It will add 1 to the price of the pizza"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "small");
+  Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
+  pizza2.toppingsCalc();
+Expected Output: price: 11;
+```
+
+
 ## Known Bugs
 
 * None atm
