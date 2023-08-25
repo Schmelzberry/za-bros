@@ -120,12 +120,17 @@ Test 2: "It will add 4 to the price of the pizza if the size is large"
 Code:
   let pizza2 = new Pizza("" , "large");
   pizza2.sizeCalc();
-Expected Output: Pizza { toppings: [""] size: "large", price: 14}
-
-
-
+Expected Output: price: 14
 ```
+##### **Describe:** Pizza.prototype.finalPrice()
 
+```javascript
+Test 1: "It will add both the toppings selections and sizing together to create a final price"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "medium");
+  pizza2.finalPrice();
+Expected Output: price: 14
+```
 
 ## Known Bugs
 

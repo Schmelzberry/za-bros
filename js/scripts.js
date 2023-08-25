@@ -46,10 +46,9 @@ Pizza.prototype.toppingsCalc = function () {
 
 //prototype for calculating size 
 Pizza.prototype.sizeCalc = function () {
-  // let price = this.price;
+ 
   let size = this.size;
   let givePriceContext = this;
-  let price = this.price;
   switch (size) {
     case ("small"):
       givePriceContext.price = 10;
