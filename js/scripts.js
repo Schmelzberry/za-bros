@@ -23,7 +23,16 @@ Pizza.prototype.fetchToppings = function () {
   return this.toppings;
 }
 
-
+// prototype for checking the toppings of a pizza
+Pizza.prototype.toppingsCalc = function () {
+  let meatToppings = this.toppings;
+  meatToppings.forEach(function(topping) {
+    if (topping === "ham" || "pepperoni")
+        this.price = this.price += 1;
+        
+  })
+    return this.price;
+}
 
 
 
