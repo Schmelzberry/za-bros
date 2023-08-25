@@ -6,7 +6,7 @@ function Pizza(toppings, size) {
   this.price = 10;
 }
 // global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
-let pizza2 = new Pizza("ham onion olive pepperoni", "small");
+let pizza2 = new Pizza("", "medium");
 
 // prototype for checking the price of a pizza
 Pizza.prototype.fetchPrice = function () {
@@ -44,6 +44,21 @@ Pizza.prototype.toppingsCalc = function () {
   return this.price;
 }
 
-
+//prototype for calculating size 
+Pizza.prototype.sizeCalc = function () {
+  let price = this.price;
+  let size = this.size;
+  let givePriceContext = this;
+  switch (size) {
+    case ("small"):
+      givePriceContext.price = 10;
+      console.log(this.price)
+      break;
+    case("medium"):
+      givePriceContext.price = 12;
+      console.log(this.price)
+      break;
+  }
+}
 
 
