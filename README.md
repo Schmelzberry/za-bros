@@ -37,6 +37,12 @@ Code:
   let pizza1 = new Pizza("small",["ham"])
 Expected Output:
   Pizza {size: "small", toppings: ["ham"]}
+
+  Test 2: "It will create an array with a length that matches number of toppings selected."
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "small");
+Expected Output:
+  Pizza { toppings: ["ham", "onion", "olive"] size: "small",}
 ```
 
 ## Known Bugs
