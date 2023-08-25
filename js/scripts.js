@@ -3,7 +3,7 @@
 function Pizza(toppings, size) {
   this.toppings = toppings.split(" ");
   this.size = size;
-  this.price = 0;
+  this.price;
 }
 // global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
 let pizza2 = new Pizza("ham onion olive pepperoni", "medium");
@@ -66,8 +66,8 @@ Pizza.prototype.sizeCalc = function () {
 }
 
 // final price prototype that calls on previous calculations to see a final price
-
 Pizza.prototype.finalPrice = function () {
+this.price = 0;
 this.toppingsCalc();
 this.sizeCalc();
 return this.price;
