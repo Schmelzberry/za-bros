@@ -58,7 +58,7 @@ Code:
   let pizza2 = new Pizza("ham onion olive" , "small");
   Pizza { toppings: ["ham", "onion", "olive"] size: "small", price: 10}
   pizza2.fetchPrice();
-Expected Output: price: 10;
+Expected Output: 10;
 
 
 ```
