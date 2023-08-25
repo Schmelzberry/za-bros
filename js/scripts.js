@@ -16,7 +16,10 @@ Pizza.prototype.fetchSize = function () {
   return this.size;
 }
 
-
+// prototype for checking the toppings of a pizza
+Pizza.prototype.fetchToppings = function () {
+  return this.toppings;
+}
 
 
 
