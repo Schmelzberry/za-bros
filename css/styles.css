@@ -5,3 +5,23 @@
 h6 {
   text-decoration: underline;
 }
+
+body {
+  color: black;
+  background-image: repeating-linear-gradient(45deg, hsla(9,19%,100%,0.05) 0px, hsla(9,19%,100%,0.05) 1px,transparent 1px, transparent 11px,hsla(9,19%,100%,0.05) 11px, hsla(9,19%,100%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, hsla(9,19%,100%,0.05) 0px, hsla(9,19%,100%,0.05) 1px,transparent 1px, transparent 11px,hsla(9,19%,100%,0.05) 11px, hsla(9,19%,100%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(45deg, hsla(9,19%,100%,0.05) 0px, hsla(9,19%,100%,0.05) 1px,transparent 1px, transparent 11px,hsla(9,19%,100%,0.05) 11px, hsla(9,19%,100%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(9,19%,100%,0.05) 0px, hsla(9,19%,100%,0.05) 1px,transparent 1px, transparent 11px,hsla(9,19%,100%,0.05) 11px, hsla(9,19%,100%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(158, 93, 28),rgb(170,176,118));
+  background-attachment: fixed;
+  background-repeat: none;
+}
+
+img {
+  width:auto;
+  height:200px;
+  display: block;
+  margin-top: 10px;
+  margin-right: 10px; /* Adjust as needed */
+  margin-bottom: 10;
+  margin-left: 10px; /* Adjust as needed */
+  border: solid brown;
+  border-radius: 5px;
+
+}

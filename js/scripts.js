@@ -95,6 +95,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function getSelectedToppings() {
+  // query all topping values in checkbox
+  const toppingCheckboxes = document.querySelectorAll("input[name='tops']:checked");
+  // need to create an array that Pizza constructor expects, use map to transform array and get value
+  const toppings = Array.from(toppingCheckboxes).map(function(checkbox) {
+    return checkbox.value;
+  });
+  return toppings.join(" ");
+}
+
+function radioValues() {
+  const selectedSize = document.querySelector("input[name='size-pizza']:checked").value;
+  return selectedSize;
+}
 
 
 function displayPizza(customerPizza) {
@@ -105,6 +119,6 @@ function displayPizza(customerPizza) {
   finalPriceResult.textContent = "$" + customerPizza.finalPrice().toFixed(2);
 
   const resultsDiv = document.getElementById("results");
-  resultsDiv.classList.remove("hidden");
+  resultsDiv.removeAttribute("class");
 }
 
