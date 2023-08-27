@@ -1,5 +1,6 @@
 // BUSINESS LOGIC // 
 
+
 function Pizza(toppings, size) {
   this.toppings = toppings.split(" ");
   this.size = size;
@@ -9,8 +10,8 @@ function Pizza(toppings, size) {
 let pizza2 = new Pizza("ham onion olive pepperoni", "large");
 
 // checking the price of a pizza
-Pizza.prototype.fetchPriceAndSize = function () {
-  return this.price + this.size;
+Pizza.prototype.fetchPrice = function () {
+  return this.price;
 }
 
 // checking the size of a pizza
@@ -21,6 +22,11 @@ Pizza.prototype.fetchSize = function () {
 // checking the toppings of a pizza
 Pizza.prototype.fetchToppings = function () {
   return this.toppings;
+}
+
+// checking the toppings of a pizza
+Pizza.prototype.fetchToppingsAndPrice = function () {
+  return (this.toppings + " " + this.price);
 }
 
 
@@ -77,11 +83,21 @@ return this.price;
 
 function handlePizza (event) {
   event.preventDefault();
-
+  // individually query all the toppings checklist values and then concatenate into a string that can be used by Pizza Object Constructor
+  let ham = document.querySelector("input#ham").value;
+  let pepperoni = document.querySelector("input#pepperoni").value;
+  let sausage = document.querySelector("input#sausage").value;
+  let onion = document.querySelector("input#onion").value;
+  let olive = document.querySelector("input#olive").value;
+  let mushroom = document.querySelector("input#mushroom").value;
+  let toppings = ham + " " + pepperoni + " " + sausage + " " + onion + " " + olive + " " + mushroom;
+    // individually query radio buttons for size values
+  let size = document.querySelector("radio").value;
+  let enterButton = document.getElementById("enter");
   let customerPizza = new Pizza(toppings, size);
 
-  let toppings = document.querySelectorAll("checkbox").values;
-  let size = document.querySelector("radio").value;
+  enterButton.addEventListener("click", displayPizza);
+
   displayPizza(customerPizza);
   console.log(customerPizza);
 
@@ -89,17 +105,23 @@ function handlePizza (event) {
 }
 
 function displayPizza(customerPizza) {
-
-  let customerPizza = document.getElementById("pizza-results");
+  let customerZa = customerPizza
+  let div =  document.querySelector("div#results")
+  let pizzaResults = document.getElementById("pizza-results");
   let finalPrice = document.getElementById("final-price-results");
 
-  customerToppings.innerText = null;
+  
+  
+
+  pizzaResults.innerText = null;
   finalPrice.innerText = null;
 
-  customerPizza.append(customerPizza.fetchToppings());
+  pizzaResults.append(customerPizza.fetchToppingsAndPrice());
   finalPrice.append(customerPizza.finalPrice());
+  console.log(customerZa);
+  
 
-  document.querySelector("div#results").removeAttribute("class");
+  div.removeAttribute("class");
 
 
 }

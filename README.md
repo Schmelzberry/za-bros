@@ -132,6 +132,17 @@ Code:
 Expected Output: price: 14
 ```
 
+##### **Describe:** Pizza.prototype.fetchToppingsAndPrice()
+
+```javascript
+Test 1: "It will return the toppings and price of a pizza Object"
+Code:
+  let pizza2 = new Pizza("ham onion olive" , "medium");
+  pizza2.finalPrice();
+Expected Output: toppings:["ham", "onion", "olive"] price: 14
+```
+
+
 ## Known Bugs
 
 * None atm
