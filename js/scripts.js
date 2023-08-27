@@ -81,49 +81,30 @@ return this.price;
 
 // USER INTERFACE LOGIC // 
 
-function handlePizza (event) {
-  event.preventDefault();
-  // individually query all the toppings checklist values and then concatenate into a string that can be used by Pizza Object Constructor
-  let ham = document.querySelector("input#ham").value;
-  let pepperoni = document.querySelector("input#pepperoni").value;
-  let sausage = document.querySelector("input#sausage").value;
-  let onion = document.querySelector("input#onion").value;
-  let olive = document.querySelector("input#olive").value;
-  let mushroom = document.querySelector("input#mushroom").value;
-  let toppings = ham + " " + pepperoni + " " + sausage + " " + onion + " " + olive + " " + mushroom;
-    // individually query radio buttons for size values
-  let size = document.querySelector("radio").value;
-  let enterButton = document.getElementById("enter");
-  let customerPizza = new Pizza(toppings, size);
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("select-tops");
 
-  enterButton.addEventListener("click", displayPizza);
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  displayPizza(customerPizza);
-  console.log(customerPizza);
+    const toppingsInput = getSelectedToppings();
+    const selectedSize = radioValues();
+
+    const customerPizza = new Pizza(toppingsInput, selectedSize);
+    displayPizza(customerPizza);
+  });
+});
 
 
-}
 
 function displayPizza(customerPizza) {
-  let customerZa = customerPizza
-  let div =  document.querySelector("div#results")
-  let pizzaResults = document.getElementById("pizza-results");
-  let finalPrice = document.getElementById("final-price-results");
+  const toppingsResult = document.getElementById("pizza-results");
+  const finalPriceResult = document.getElementById("final-price-results");
 
-  
-  
+  toppingsResult.textContent = customerPizza.fetchToppings().join(", ");
+  finalPriceResult.textContent = "$" + customerPizza.finalPrice().toFixed(2);
 
-  pizzaResults.innerText = null;
-  finalPrice.innerText = null;
-
-  pizzaResults.append(customerPizza.fetchToppingsAndPrice());
-  finalPrice.append(customerPizza.finalPrice());
-  console.log(customerZa);
-  
-
-  div.removeAttribute("class");
-
-
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.classList.remove("hidden");
 }
 
-window.addEventListener("load", handlePizza);
