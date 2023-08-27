@@ -19,9 +19,12 @@
   <div id="form1" class="container-fluid">
 
     <h1>'Za Bros Pizza</h1>
-    <h4>Select toppings:</h4>
+    <p>Welcome to 'Za Bros pizza, brah.</p>
+    <p>Go ahead and choose your toppings for a stellar 'za below!</p>
+    
 
     <form id="select-tops" class="container">
+      <h6>Select toppings:</h6>
       <input type="checkbox" id="ham" name="tops" value="ham">
       <label for="ham">Ham</label><br>
       <input type="checkbox" id="pepperoni" name="tops" value="pepperoni">
@@ -34,29 +37,22 @@
       <label for="olive">Olives</label><br>
       <input type="checkbox" id="mushroom" name="tops" value="mushroom">
       <label for="mushroom">Mushrooms</label><br>
+      <h6>Select size:</h6>
+      <input type="radio" id="small" name="size-pizza" value="small">
+      <label for="small">Small</label><br>
+      <input type="radio" id="medium" name="size-pizza" value="medium">
+      <label for="medium">Medium</label><br>
+      <input type="radio" id="large" name="size-pizza" value="large">
+      <label for="large">Large</label><br>
       <button id="tops-submit" type="submit">Enter</button>
     </form>
 
   </div>
 
-  <div id="form2" class="container-fluid">
-    <h4>Select your size:</h4>
-
-    <form id="select-size" class="container">
-      
-      <input type="radio" id="sml" name="size-pizza" value="small">
-      <label for="sml">Small</label><br>
-      <input type="radio" id="med" name="size-pizza" value="medium">
-      <label for="med">Medium</label><br>
-      <input type="radio" id="lrg" name="size-pizza" value="large">
-      <label for="lrg">Large</label><br>
-      <button id="size-submit" type="submit">Enter</button>
-    </form>
-
-  </div>
+  
 
   <div id="results" class="hidden">
-    <p>Thanks for ordering! Based on your toppings of :<span id="toppings-results"></span> and size of <span id="size-results"></span> , your final price will be <span id="final-price-results"></span></p>
+    <p>Thanks for ordering! Based on your selections of :<span id="pizza-results"></span>, your final price will be <span id="final-price-results"></span></p>
   </div>
 
 </body>

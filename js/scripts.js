@@ -6,11 +6,11 @@ function Pizza(toppings, size) {
   this.price;
 }
 // global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
-let pizza2 = new Pizza("ham onion olive pepperoni", "medium");
+let pizza2 = new Pizza("ham onion olive pepperoni", "large");
 
 // checking the price of a pizza
-Pizza.prototype.fetchPrice = function () {
-  return this.price;
+Pizza.prototype.fetchPriceAndSize = function () {
+  return this.price + this.size;
 }
 
 // checking the size of a pizza
@@ -75,38 +75,29 @@ return this.price;
 
 // USER INTERFACE LOGIC // 
 
-function handlePizza () {
-  const customerPizza = new Pizza("toppings", "size");
+function handlePizza (event) {
+  event.preventDefault();
 
-  const toppingsButton = document.querySelector("tops-submit");
-  console.log(toppingsButton)
-  const sizeButton = document.getElementById("size-submit");
+  let customerPizza = new Pizza(toppings, size);
 
-  // toppings button event handler
-  toppingsButton.addEventListener("click", function() {
-    displayPizza(customerPizza);
+  let toppings = document.querySelectorAll("checkbox").values;
+  let size = document.querySelector("radio").value;
+  displayPizza(customerPizza);
+  console.log(customerPizza);
 
-  })
 
-  sizeButton.addEventListener("click", function() {
-    displayPizza(customerPizza);
-
-  })
 }
 
 function displayPizza(customerPizza) {
 
-  const customerToppings = document.getElementById("toppings-results");
-  const customerSize = document.getElementById("size-results");
-  const customerFinalPrice = document.getElementById("final-price-results");
+  let customerPizza = document.getElementById("pizza-results");
+  let finalPrice = document.getElementById("final-price-results");
 
   customerToppings.innerText = null;
-  customerSize.innerText = null;
-  customerFinalPrice.innerText = null;
+  finalPrice.innerText = null;
 
-  customerToppings.append(customerPizza.fetchToppings());
-  customerSize.append(customerPizza.fetchSize());
-  customerFinalPrice.append(customerPizza.finalPrice());
+  customerPizza.append(customerPizza.fetchToppings());
+  finalPrice.append(customerPizza.finalPrice());
 
   document.querySelector("div#results").removeAttribute("class");
 
