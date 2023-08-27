@@ -21,9 +21,11 @@
     <h1>'Za Bros Pizza</h1>
     <p>Welcome to 'Za Bros pizza, brah.</p>
     <p>Go ahead and choose your toppings for a stellar 'za below! We automatically include cheese <em>(we understand this is groundbreaking, take a second if you need to collect yourself)</em></p>
+ 
     
 
     <form id="select-tops" class="container">
+      
       <h6>Select toppings:</h6>
       <input type="checkbox" id="ham" name="tops" value="ham">
       <label for="ham">Ham</label><br>
@@ -50,13 +52,26 @@
   </div>
 
   
+  <div class="container">
 
-  <div id="results" class="hidden">
-  
-    <p>Thanks for ordering from 'Za Bros!</p>
-    <p> Based on your selections of <span id="pizza-results"></span>, your final price will be <span id="final-price-results"></span></p>
-    <img src="https://previews.123rf.com/images/elenabukharina/elenabukharina1702/elenabukharina170200182/71358254-seamless-background-from-a-square-pizza-pattern.jpg" alt="pizza">
+    <div id="results" class="hidden">
     
+      <p>Thanks for ordering from 'Za Bros! Check out your 'za below!</p>
+      
+      <h4>Toppings</h4>
+      <h6>Meat: $1.00</h6>
+      <h6>Veggies: $.5</h6><br>
+
+      <h4>Size</h4>
+      <h6>Small: $10</h6>
+      <h6>Medium: $12</h6>
+      <h6>Large: $14</h6>
+      
+      <p> Based on your toppings (<span id="pizza-results"></span>)<p>and a size of <span id="size-results"></span>, your final price will be: <span id="price-results"></span>.</p> 
+      <img src="https://previews.123rf.com/images/elenabukharina/elenabukharina1702/elenabukharina170200182/71358254-seamless-background-from-a-square-pizza-pattern.jpg" alt="pizza">
+
+    </div>
+
   </div>
 
 </body>

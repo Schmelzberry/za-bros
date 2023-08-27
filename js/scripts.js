@@ -1,13 +1,10 @@
 // BUSINESS LOGIC // 
 
-
 function Pizza(toppings, size) {
   this.toppings = toppings.split(" ");
   this.size = size;
   this.price;
 }
-// global instance of pizza for testing purpose *****DELETE BEFORE TURNING IN*****
-let pizza2 = new Pizza("ham onion olive pepperoni", "large");
 
 // checking the price of a pizza
 Pizza.prototype.fetchPrice = function () {
@@ -34,7 +31,7 @@ Pizza.prototype.fetchToppingsAndPrice = function () {
 Pizza.prototype.toppingsCalc = function () {
   let meatToppings = this.toppings;
   
-  // set this variable so the forEach loop can communicate with Pizza's price and can pass result outside of loop to toppingsCalc prototype  
+  // set this variable so the forEach loop can communicate with Pizza's price and can pass result outside of loop to toppingsCalc prototype
   let giveLoopContext = this;
 
   meatToppings.forEach(function (topping) {
@@ -42,7 +39,7 @@ Pizza.prototype.toppingsCalc = function () {
       giveLoopContext.price += 1;
       console.log(giveLoopContext.price);
     } 
-    else if (topping.toString() === 'onion' || topping.toString() === 'olive') {
+    else if (topping.toString() === 'onion' || topping.toString() === 'olive' || topping.toString() === 'mushroom' ) {
       giveLoopContext.price += 0.5;
       console.log(giveLoopContext.price);
     }
@@ -87,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const toppingsInput = getSelectedToppings();
+    const toppingsInput = SelectedToppings();
     const selectedSize = radioValues();
 
     const customerPizza = new Pizza(toppingsInput, selectedSize);
@@ -95,28 +92,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function getSelectedToppings() {
-  // query all topping values in checkbox
+// check form for which toppings are checked
+// query all topping values in checkbox
+// need to create an array that Pizza constructor expects, use map to transform array and get value
+function SelectedToppings() {
   const toppingCheckboxes = document.querySelectorAll("input[name='tops']:checked");
-  // need to create an array that Pizza constructor expects, use map to transform array and get value
   const toppings = Array.from(toppingCheckboxes).map(function(checkbox) {
     return checkbox.value;
   });
   return toppings.join(" ");
 }
 
+// return radio values from form
 function radioValues() {
   const selectedSize = document.querySelector("input[name='size-pizza']:checked").value;
   return selectedSize;
 }
 
-
+// display results
 function displayPizza(customerPizza) {
   const toppingsResult = document.getElementById("pizza-results");
-  const finalPriceResult = document.getElementById("final-price-results");
+  const finalPriceResult = document.getElementById("price-results");
+  const finalSizeResult = document.getElementById("size-results");
 
-  toppingsResult.textContent = customerPizza.fetchToppings().join(", ");
-  finalPriceResult.textContent = "$" + customerPizza.finalPrice().toFixed(2);
+  toppingsResult.innerText = customerPizza.fetchToppings().join(", ");
+  finalPriceResult.innerText = "$" + customerPizza.finalPrice().toFixed(2);
+  finalSizeResult.innerText = customerPizza.fetchSize();
 
   const resultsDiv = document.getElementById("results");
   resultsDiv.removeAttribute("class");

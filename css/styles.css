@@ -2,7 +2,7 @@
   display:none;
 }
 
-h6 {
+#select-tops h6 {
   text-decoration: underline;
 }
 
@@ -24,4 +24,17 @@ img {
   border: solid brown;
   border-radius: 5px;
 
+}
+
+#results {
+  border: solid black;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-right: 10px; /* Adjust as needed */
+  margin-bottom: 10;
+  margin-left: 10px; /* Adjust as needed */
+}
+
+#results h6 {
+  text-decoration: underline;
 }

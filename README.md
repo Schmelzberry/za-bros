@@ -2,13 +2,14 @@
 
 #### By _**Jake Elsberry 
 
-#### _A webpage application allowing for ordering pizza.
+#### _A webpage application for ordering pizza.
 
 ## Technologies Used
 
 * JavaScript
 * HTML
 * CSS
+* Bootstrap
 
 ## Description
 
@@ -32,7 +33,7 @@ git clone https://github.com/Schmelzberry/za-bros.git
 ##### **Describe:** Pizza()
 
 ```javascript
-Test 1: "It will create a pizza object with a 2 key value pairs: size and an array of toppings."
+Test 1: "It will create a pizza object with 2 key value pairs: size and an array of toppings."
 Code:
   let pizza1 = new Pizza("small",["ham"])
 Expected Output:
@@ -145,7 +146,7 @@ Expected Output: toppings:["ham", "onion", "olive"] price: 14
 
 ## Known Bugs
 
-* None atm
+* No known bugs
 
 ## License
 
