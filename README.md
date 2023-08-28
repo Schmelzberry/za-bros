@@ -146,8 +146,7 @@ Expected Output: toppings:["ham", "onion", "olive"] price: 14
 
 ## Known Bugs
 
-* No known bugs
-
+*
 ## License
 
 MIT License
