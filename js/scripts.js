@@ -1,47 +1,20 @@
 // BUSINESS LOGIC // 
 
 function Pizza(toppings, size) {
-  this.toppings = toppings.split(" ");
+  this.toppings = toppings;
   this.size = size;
   this.price;
 }
 
-// checking the price of a pizza
-Pizza.prototype.fetchPrice = function () {
-  return this.price;
-}
-
-// checking the size of a pizza
-Pizza.prototype.fetchSize = function () {
-  return this.size;
-}
-
-// checking the toppings of a pizza
-Pizza.prototype.fetchToppings = function () {
-  return this.toppings;
-}
-
-// checking the toppings of a pizza
-Pizza.prototype.fetchToppingsAndPrice = function () {
-  return (this.toppings + " " + this.price);
-}
-
-
 // prototype for checking the toppings of a pizza
 Pizza.prototype.toppingsCalc = function () {
-  let meatToppings = this.toppings;
-  
-  // set this variable so the forEach loop can communicate with Pizza's price and can pass result outside of loop to toppingsCalc prototype
-  let giveLoopContext = this;
+  let Toppings = this.toppings;
 
-  meatToppings.forEach(function (topping) {
-    if (topping.toString() === 'ham' || topping.toString() === 'pepperoni' || topping.toString() === 'sausage') {
-      giveLoopContext.price += 1;
-      console.log(giveLoopContext.price);
-    } 
-    else if (topping.toString() === 'onion' || topping.toString() === 'olive' || topping.toString() === 'mushroom' ) {
-      giveLoopContext.price += 0.5;
-      console.log(giveLoopContext.price);
+  Toppings.forEach((topping) => {
+    if (topping === 'ham' || topping === 'pepperoni' || topping === 'sausage') {
+      this.price += 1;
+    } else {
+      this.price += 0.5;
     }
   })
   return this.price;
@@ -49,31 +22,28 @@ Pizza.prototype.toppingsCalc = function () {
 
 //prototype for calculating size 
 Pizza.prototype.sizeCalc = function () {
- 
+
   let size = this.size;
-  let givePriceContext = this;
+
   switch (size) {
     case ("small"):
-      givePriceContext.price += 10;
-      console.log(givePriceContext.price)
+      this.price += 10;
       break;
-    case("medium"):
-      givePriceContext.price += 12;
-      console.log(givePriceContext.price);
+    case ("medium"):
+      this.price += 12;
       break;
-    case("large"):
-      givePriceContext.price += 14;
-      console.log(givePriceContext.price);
+    case ("large"):
+      this.price += 14;
       break;
   }
 }
 
 // final price prototype that calls on previous calculations to see a final price
 Pizza.prototype.finalPrice = function () {
-this.price = 0;
-this.toppingsCalc();
-this.sizeCalc();
-return this.price;
+  this.price = 0;
+  this.toppingsCalc();
+  this.sizeCalc();
+  return this.price;
 }
 
 // USER INTERFACE LOGIC // 
@@ -97,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // need to create an array that Pizza constructor expects, use map to transform array and get value
 function SelectedToppings() {
   const toppingCheckboxes = document.querySelectorAll("input[name='tops']:checked");
-  const toppings = Array.from(toppingCheckboxes).map(function(checkbox) {
+  const toppings = Array.from(toppingCheckboxes).map(function (checkbox) {
     return checkbox.value;
   });
-  return toppings.join(" ");
+  return toppings;
 }
 
 // return radio values from form
@@ -115,9 +85,9 @@ function displayPizza(customerPizza) {
   const finalPriceResult = document.getElementById("price-results");
   const finalSizeResult = document.getElementById("size-results");
 
-  toppingsResult.innerText = customerPizza.fetchToppings().join(", ");
+  toppingsResult.innerText = customerPizza.toppings.join(", ");
   finalPriceResult.innerText = "$" + customerPizza.finalPrice().toFixed(2);
-  finalSizeResult.innerText = customerPizza.fetchSize();
+  finalSizeResult.innerText = customerPizza.size;
 
   const resultsDiv = document.getElementById("results");
   resultsDiv.removeAttribute("class");
